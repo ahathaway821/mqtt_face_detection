@@ -1,0 +1,14 @@
+version: '3'
+services:
+    broker:
+        build: ./broker
+        ports:
+        - "1883:1883"
+    cam:
+        build: ./cam
+        privileged: true
+        devices:
+        - "/dev/video1:/dev/video1"
+        
+    sub:
+        build: ./sub
