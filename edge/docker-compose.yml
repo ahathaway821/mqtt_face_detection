@@ -12,3 +12,5 @@ services:
         
     sub:
         build: ./sub
+        depends_on: 
+        - broker

@@ -15,8 +15,10 @@ def on_connect_local(client, userdata, flags, rc):
 local_mqttclient = mqtt.Client()
 local_mqttclient.on_connect = on_connect_local
 local_mqttclient.connect(LOCAL_MQTT_HOST, LOCAL_MQTT_PORT, 60)
+print('Camera connected to local broker')
 
-# 1 should correspond to /dev/video1 , your USB camera. The 0 is reserved for the TX2 onboard camera
+# 1 should correspond to /dev/video1
+# your USB camera. The 0 is reserved for the TX2 onboard camera
 cap = cv2.VideoCapture(1)
 face_cascade = cv2.CascadeClassifier('./haarcascade_frontalface_default.xml')
 

@@ -1,0 +1,11 @@
+version: '3'
+services:
+    broker:
+        build: ./broker
+        ports:
+        - "1883:1883"
+
+    img_handler:
+        build: ./img_handler
+        depends_on: 
+        - broker
