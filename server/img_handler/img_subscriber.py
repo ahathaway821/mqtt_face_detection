@@ -19,8 +19,8 @@ def on_message(client, userdata, msg):
     try:
         print("message received!")
 
-        face_id = uuid.uuid4()
-        with fs.open(f'{bucket_name}/{face_id}', 'wb') as f:
+        face_id = str(uuid.uuid4())
+        with fs.open(bucket_name} + "/" + face_id, 'wb') as f:
             f.write(msg)
 
     except Exception as e:
