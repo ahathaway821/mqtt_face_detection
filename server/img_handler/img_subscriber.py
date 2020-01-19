@@ -20,7 +20,7 @@ def on_message(client, userdata, msg):
         print("message received!")
 
         face_id = str(uuid.uuid4())
-        with fs.open(bucket_name} + "/" + face_id, 'wb') as f:
+        with fs.open(bucket_name} + "/" + face_id + ".png", 'wb') as f:
             f.write(msg)
 
     except Exception as e:

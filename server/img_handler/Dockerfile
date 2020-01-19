@@ -8,4 +8,4 @@ RUN pip install paho-mqtt s3fs
 
 ADD img_subscriber.py /
 
-CMD ["python", "./img_subscriber.py"]
+CMD ["python", "-u", "./img_subscriber.py"]
