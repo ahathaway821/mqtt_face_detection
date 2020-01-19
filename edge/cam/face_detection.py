@@ -1,4 +1,5 @@
 import cv2
+import time
 import paho.mqtt.client as mqtt
 
 
@@ -23,6 +24,7 @@ cap = cv2.VideoCapture(1)
 face_cascade = cv2.CascadeClassifier('./haarcascade_frontalface_default.xml')
 
 while(True):
+    time.sleep(1)
     if not cap.isOpened():
         print('Unable to load camera')
         pass

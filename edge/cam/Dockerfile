@@ -29,4 +29,4 @@ WORKDIR /
 ADD face_detection.py /
 ADD haarcascade_frontalface_default.xml /
 
-CMD ["python", "./face_detection.py"]
+CMD ["python", "-u", "./face_detection.py"]

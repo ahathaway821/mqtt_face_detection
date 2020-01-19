@@ -7,4 +7,4 @@ RUN pip install paho-mqtt
 
 ADD face_subscriber.py /
 
-CMD ["python", "./face_subscriber.py"]
+CMD ["python", "-u", "./face_subscriber.py"]

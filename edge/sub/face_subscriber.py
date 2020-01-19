@@ -18,7 +18,7 @@ def on_message(client, userdata, msg):
     try:
         print("message received!")
         remote_mqttclient.publish(REMOTE_MQTT_TOPIC,
-                                  ayload=msg,
+                                  payload=msg.payload,
                                   qos=0,
                                   retain=False)
     except Exception as e:
