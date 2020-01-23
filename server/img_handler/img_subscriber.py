@@ -8,6 +8,8 @@ LOCAL_MQTT_TOPIC = "faces"
 
 bucket_name = "w251-hw3-object-storage-bucket"
 
+# First mount s3 bucket so we can write the file to the cloud
+mount_result = os.system('./mount_s3.sh')
 
 def on_connect_local(client, userdata, flags, rc):
     print("connected to local broker with rc: " + str(rc))
@@ -19,9 +21,6 @@ def on_message(client, userdata, msg):
         print("message received!")
         face_id = str(uuid.uuid4())
         
-        # First mount s3 bucket so we can write the file to the cloud
-        mount_result = os.system('./mount_s3.sh')
-
         # Write message payload to mounted s3 bucket
         with open("mount/" + face_id + ".png", "wb") as f:
             f.write(msg.payload)
